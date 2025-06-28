@@ -1,90 +1,85 @@
-# student-performance-analysis
-# 🎓 Student Performance Prediction
+# 🎓 Student Performance Analysis
 
-This project applies supervised machine learning to predict whether a student will **pass or fail** based on academic, demographic, and social factors. It demonstrates end-to-end steps including data exploration, feature engineering, and model evaluation using real-world educational data.
+This project uses machine learning to predict students' final grades (`G3`) based on a variety of academic and personal features. It was built as part of an internship selection process and demonstrates key steps in data science, including EDA, modeling, and evaluation.
 
 ---
 
 ## 📁 Dataset
 
-- **Source**: [UCI Machine Learning Repository](https://archive.ics.uci.edu/ml/datasets/Student+Performance)
-- **File**: `student-mat.csv` (Math course dataset)
-- **Records**: 395 students
-- **Features include**:
-  - Demographics (age, gender, address, etc.)
-  - Social background (parent education, family support)
-  - Study habits (study time, absences, failures)
-  - Academic grades (`G1`, `G2`, `G3`)
+- **Source**: UCI Machine Learning Repository – Student Performance Dataset
+- **Attributes**: Prior grades, study time, failures, absences, family background, and more
+- **Target Variable**: Final grade (`G3`)
 
 ---
 
-## 🧠 ML Workflow
+## 📊 Project Workflow
 
-1. **Load and clean the dataset**
-2. **EDA (Exploratory Data Analysis)**:
-   - Distribution plots
-   - Boxplots
-   - Correlation heatmaps
-   - Violin plots and bar charts
-3. **Feature Engineering**:
-   - One-hot encoding of categoricals
-   - Derived binary column `pass_fail` from `G3`
-4. **Model Training & Evaluation**:
-   - Logistic Regression
-   - Decision Tree Classifier
-5. **Evaluation Metrics**:
-   - Accuracy score
-   - Confusion matrix
-   - Classification report
+### ✅ Step 1: Import Libraries & Load Dataset
+- Imported pandas, numpy, matplotlib, seaborn, and scikit-learn
+- Loaded CSV data and inspected structure
 
----
+### ✅ Step 2: Data Preprocessing
+- One-hot encoded categorical features
+- Checked for nulls, cleaned column types
 
-## 🔍 Results
+### ✅ Step 3: Exploratory Data Analysis (EDA)
+- Visualized distribution of final grades (`G3`)
+- Created heatmap to explore correlations
+- Boxplots for understanding feature impact
 
-| Model               | Accuracy |
-|---------------------|----------|
-| Logistic Regression | ~83%     |
-| Decision Tree       | ~81%     |
+### ✅ Step 4: Model Building (Linear Regression)
+- Split data into training and test sets
+- Trained a Linear Regression model
+- Evaluated using:
+  - R² Score: **0.72**
+  - Mean Absolute Error: **1.65**
+- Added residual analysis for error patterns
+- Applied 5-fold cross-validation  
+  - Mean R²: **0.78**
 
-Both models performed decently, with Logistic Regression slightly outperforming the decision tree. Study time, past failures, and absences were strong predictors of student success.
-
----
-
-## 📌 Conclusion
-
-This project demonstrates how simple machine learning models can be used to **analyze and predict educational outcomes**. Using a real dataset from Portuguese schools, we found that student performance can be meaningfully predicted using features related to behavior, study habits, and social background.
-
-> Future improvements could include adding ensemble models, hyperparameter tuning, and deploying the model using a web interface.
+### ✅ Step 5: Insights & Conclusion
+- G1 and G2 (prior grades) are the strongest predictors
+- Study time and past failures also impact G3
+- Built a solid baseline model for student performance prediction
 
 ---
 
-## 🔧 Tech Stack
+## 🚀 Key Technologies
 
-- Python (Jupyter Notebook)
-- Libraries:
-  - `pandas`, `numpy`
-  - `matplotlib`, `seaborn`
-  - `scikit-learn`
-
----
-
-## 📁 Project Structure
-Student-Performance-Prediction/
-├── README.md
-├── student-mat.csv 
-├── student_performance.ipynb 
-└── LICENSE )
+- Python
+- pandas, numpy
+- matplotlib, seaborn
+- scikit-learn
 
 ---
 
-## 👩‍💻 Author
+## 📌 Results Summary
 
-**Sneha Jha**  
-BCA (Data Science), 5th Semester  
-Aspiring Data Scientist
+| Metric               | Value  |
+|----------------------|--------|
+| R² Score             | 0.72   |
+| Mean Absolute Error  | 1.65   |
+| Cross-Validated R²   | 0.78   |
 
 ---
 
-## 📝 License
+## ✅ How to Run
 
-This project is open-source and available under the [MIT License](./LICENSE).
+1. Clone this repo or download the `.ipynb` file
+2. Install dependencies:  
+   `pip install pandas numpy matplotlib seaborn scikit-learn`
+3. Run the notebook step-by-step in Jupyter or Google Colab
+
+---
+
+## 📄 Disclaimer
+
+This project was created for educational and internship evaluation purposes. The dataset is public, and all work is original.
+
+---
+
+## 📬 Contact
+
+**Sneha**  
+Student, BCA (Data Science)  
+Email: snehajha.3006@gmail.com 
